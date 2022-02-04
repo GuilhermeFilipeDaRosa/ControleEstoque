@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <title>Alterar Produto</title>
 <meta name="author" content="Guilherme Filipe Da Rosa">
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="/css/index.css">
 <script src="https://kit.fontawesome.com/006642858d.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
 
@@ -26,7 +26,7 @@
 
 </header>
 
-<form method="post" action="/alterar" th:object="${produto}">
+<form style="    margin-top: 111px;" method="post" action="/alterar" th:object="${produto}">
 
 <input type="hidden" th:field="*{codigo}">
 
@@ -50,27 +50,27 @@
 <div class="row">
 	<div class="col-md-6 form-group offset-md-3">
 		<label>Valor Fornecedor:</label>
-		<input placeholder="Ex: 12" th:field="*{valor_fornecedor}">
+		<input style="    margin-left: 33px;" placeholder="Ex: 12" th:field="*{valor_fornecedor}">
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-6 form-group offset-md-3">
 		<label>Quantidade Estoque:</label>
-		<input placeholder="Ex: 12" th:field="*{qtde_estoque}">
+		<input style="    margin-left: 9px;" placeholder="Ex: 12" th:field="*{qtde_estoque}">
 	</div>
 </div>
 
 <div class="row">
 	<button type="submit" class="btn btn-success offset-md-5">SALVAR</button>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	<a class="btn btn-outline-danger">VOLTAR</a>
+<!-- 	&nbsp;&nbsp;&nbsp;&nbsp; -->
+<!-- 	<a class="btn btn-outline-danger">VOLTAR</a> -->
 </div>
 
 </form>
 
 <footer>
-<div class="rodape">
+<div class="rodape" style="position:absolute;width:100%;bottom:0;">
  <span>Todos os Direito Reservados - 2022 &copy; Guilherme Filipe Da Rosa</span>
 </div>
 </footer>

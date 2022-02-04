@@ -14,7 +14,8 @@
 <body>
 
 <header>
-	<nav style="background-color: #177fbf;" class="navbar navbar-expand-lg navbar-dark">
+	<nav style="background-color: #177fbf;    background-color: #177fbf;
+    width: 100%;" class="navbar navbar-expand-lg navbar-dark">
 		
 		<div id="navMobile" class="navbar-collapse collapse">
 			<a class="nav-item nav-link" th:href="@{/}">Home</a>
@@ -26,7 +27,7 @@
 
 </header>
 
-<form method="post" action="/insertProdutos" th:object="${produto}">
+<form style="margin-top: 108px;" method="post" action="/insertProdutos" th:object="${produto}">
 <div class="row">
 	<div class="col-md-6 form-group offset-md-3">
 		<label>Descrição do Produto:</label>
@@ -58,27 +59,29 @@
 <div class="row">
 	<div class="col-md-6 form-group offset-md-3">
 		<label>Valor Fornecedor:</label>
-		<input placeholder="Ex: 12" th:field="*{valor_fornecedor}">
+		<input style="    margin-left: 32px;" placeholder="Ex: 12" th:field="*{valor_fornecedor}">
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-6 form-group offset-md-3">
 		<label>Quantidade Estoque:</label>
-		<input placeholder="Ex: 12" th:field="*{qtde_estoque}">
+		<input style="margin-left: 8px;" placeholder="Ex: 12" th:field="*{qtde_estoque}">
 	</div>
 </div>
 
 <div class="row">
 	<button type="submit" class="btn btn-success offset-md-5">SALVAR</button>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	<a class="btn btn-outline-danger">VOLTAR</a>
+<!-- 	&nbsp;&nbsp;&nbsp;&nbsp; -->
+<!-- 	<a class="btn btn-outline-danger">VOLTAR</a> -->
 </div>
 
 </form>
 
 <footer>
-<div class="rodape">
+<div class="rodape" style="position: absolute;
+    bottom: 0;
+    width: 100%;">
  <span>Todos os Direito Reservados - 2022 &copy; Guilherme Filipe Da Rosa</span>
 </div>
 </footer>
