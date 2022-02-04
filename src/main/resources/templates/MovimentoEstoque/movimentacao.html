@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<title>Consulta 1</title>
+<meta name="author" content="Guilherme Filipe Da Rosa">
+<link rel="stylesheet" href="css/index.css">
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+	<nav style="background-color: #177fbf;" class="navbar navbar-expand-lg navbar-dark">
+		
+		<div id="navMobile" class="navbar-collapse collapse">
+			<a class="nav-item nav-link" th:href="@{/}">Home</a>
+			<a class="nav-item nav-link" th:href="@{inserirProdutos}">Cadastrar Produto</a>
+			<a class="nav-item nav-link" th:href="@{produtosAdicionados}">Ver Produtos</a>
+			<a class="nav-item nav-link" th:href="@{movimentacao}">Consulta Movimentação</a>
+		</div>
+	</nav>
+</header>
+
+<table class="table table-bordered table-hover">
+<!-- private Integer codigoMovimentacao;
+	
+	@Column(name = "codigoProduto")
+	private Integer codigoProduto;
+	
+	@Column(name = "tipoMovimentacao")
+//	@Enumerated(EnumType.STRING)
+	private String tipoMovimentacao;// E - ENTRADA, S - SAÍDA
+	
+	@Column(name = "valor")
+	private Double valor;
+	
+	@Column(name = "data")
+	private Date data;
+	
+	@Column(name = "quantidadeMovimentada")
+	private Double quantidadeMovimentada; -->
+	
+	<thead>
+		<th scope="col">Código Produto</th>
+		<th scope="col">Tipo</th>
+			<th scope="col">Valor</th>
+		<th scope="col">Data</th>
+		<th scope="col">Quantidade Movimentada</th>
+	</thead>
+	
+	<tbody>
+		<tr scope="row" th:each="dados : ${dados}">
+			<td th:text=${dados.codigoProduto}></td>
+			
+			<div th:switch="${dados.tipoMovimentacao}">
+			<td th:case="E">Entrada</td>
+			<td th:case="S">Saída</td>
+			<td th:case="*">Não definido</td>
+			</div>
+			
+			<td th:text="${dados.valor}"></td>
+			<td th:text=${dados.data}></td>
+			<td th:text=${dados.quantidadeMovimentada}></td>
+		</tr>
+	</tbody>
+
+</table>
+
+<footer>
+<div class="rodape">
+ <span>Todos os Direito Reservados - 2022 &copy; Guilherme Filipe Da Rosa</span>
+</div>
+</footer>
+
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

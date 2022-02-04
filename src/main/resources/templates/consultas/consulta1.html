@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<title>Consulta 1</title>
+<meta name="author" content="Guilherme Filipe Da Rosa">
+<link rel="stylesheet" href="css/index.css">
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+	<nav style="background-color: #177fbf;" class="navbar navbar-expand-lg navbar-dark">
+		
+		<div id="navMobile" class="navbar-collapse collapse">
+			<a class="nav-item nav-link" th:href="@{/}">Home</a>
+			<a class="nav-item nav-link" th:href="@{inserirProdutos}">Cadastrar Produto</a>
+			<a class="nav-item nav-link" th:href="@{produtosAdicionados}">Ver Produtos</a>
+			<a class="nav-item nav-link" th:href="@{movimentacao}">Consulta Movimentação</a>
+		</div>
+	</nav>
+</header>
+
+<table class="table table-bordered table-hover">
+<!-- P.codigo,"
+			+ "        P.descricao,"
+			+ "        P.tipo,"
+			+ "        P.qtde_estoque,"
+			+ "        SUM(M.quantidadeMovimentada) AS quantidadeMovimentada -->
+	<thead>
+		<th scope="col">Código Produto</th>
+		<th scope="col">Descrição</th>
+		<th scope="col">Tipo</th>
+		<th scope="col">Quantidade Estoque</th>
+		<th scope="col">Quantidade Saída</th>
+	</thead>
+	
+	<tbody>
+		<tr scope="row" th:each="produto : ${produtos}">
+			<td th:text=${produto.codigo}></td>
+			<td th:text=${produto.descricao}></td>
+			<td th:text="${produto.tipo}"></td>
+			<td th:text=${produto.qtde_estoque}></td>
+			<td th:text=${produto.quantidadeMovimentada}></td>
+		</tr>
+	</tbody>
+
+</table>
+
+<footer>
+<div class="rodape">
+ <span>Todos os Direito Reservados - 2022 &copy; Guilherme Filipe Da Rosa</span>
+</div>
+</footer>
+
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
